@@ -9,7 +9,7 @@ import { FaHeartbeat } from "react-icons/fa";
 
 function Footer() {
     return (
-        <footer className='w-full bg-black py-4 px-4 mt-6'>
+        <footer className='w-full bg-black py-4 px-4'>
             <div className='max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left'>
                 {/* Logo */}
                 <h1 className="flex items-center text-2xl sm:text-4xl font-bold p-5 text-amber-50 cursor-pointer"><span><GiBlackBook /></span><span className="">Lib</span>Reads</h1>

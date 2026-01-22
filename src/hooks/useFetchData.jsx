@@ -5,19 +5,43 @@
 //and dependency array is empty here so that the API call doesn't happen everytime the data of dependancy array changes.
 
 import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 
 const useFetchData = () => {
     const [products, setProducts] = useState([])
     const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
-        fetch('https://dummyjson.com/products')
-        .then((res)=>res.json()) //it returns a promise(json()).
-        .then((data)=>setProducts(data.products)) //the promise is then waited to be resolved.
-        .catch(()=> setError('failed to fetch products')) //if we get an error while getting or fetching the API.
+      let ignore = false
+
+      const fetchData = async () => {
+        try{
+          setLoading(true)
+          const res = await axios.get('https://dummyjson.com/products')
+          if(!ignore) setProducts(res.data.products)
+        }
+        catch(error){
+          if(!ignore) {
+            setError(error)
+          }
+        }
+        finally{
+          if(!ignore){
+            setLoading(false)
+          }
+        }
+      } 
+        // fetch('https://dummyjson.com/products')
+        // .then((res)=>res.json()) //it returns a promise(json()).
+        // .then((data)=>setProducts(data.products)) //the promise is then waited to be resolved.
+        // .catch(()=> setError('failed to fetch products')) //if we get an error while getting or fetching the API.
+
+        fetchData();
+        return () => { ignore = true; };
     },[])
 
-  return {products, error} //an object is returned
+  return [products, loading, error] //an object is returned
 }
 
 export default useFetchData;

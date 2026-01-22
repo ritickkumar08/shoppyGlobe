@@ -28,7 +28,7 @@ export const cartSlice = createSlice({
             const item = state.items.find((item)=>{item.id === action.payload})
             if(item) item.quantity--;
         },
-        clearCart:(state,action)=>{
+        clearCart:(state)=>{
             state.items = [];
         }
     }

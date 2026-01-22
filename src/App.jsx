@@ -5,10 +5,10 @@ import Header from './components/Header'
 
 function App() {
   return (
-    <div className='bg-gradient-to-r from-rose-100 to-rose-300 min-h-screen'>
+    <div>
       <Header/>
       <Outlet/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }
