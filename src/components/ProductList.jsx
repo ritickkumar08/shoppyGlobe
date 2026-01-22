@@ -1,6 +1,7 @@
 import React from 'react'
 import useFetchData from '../hooks/useFetchData'
 import Loader from './Loader'
+import NotFound from './NotFound'
 
 
 function ProductList() {
@@ -12,6 +13,7 @@ function ProductList() {
     // console.log(error);
     
     if(loading) return <Loader/>
+    if(error) return <NotFound/>
     
 
     return (

@@ -68,7 +68,7 @@ function HomeComponents() {
   //   }
   // ];
     return (
-        <div className='border bg-gradient-to-r min-h-screen from-rose-200 via-rose-400 dark:bg-dark-bg transition-colors duration-300'>
+        <div className='border bg-gradient-to-r min-h-screen from-rose-200 to-rose-400 dark:bg-dark-bg transition-colors duration-300'>
 
             <style>@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');</style>
 
