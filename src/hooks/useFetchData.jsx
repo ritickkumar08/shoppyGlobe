@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 const useFetchData = () => {
-    const [products, setProducts] = useState([])
+    const [data, setData] = useState([])
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -19,7 +19,7 @@ const useFetchData = () => {
         try{
           setLoading(true)
           const res = await axios.get('https://dummyjson.com/products')
-          if(!ignore) setProducts(res.data.products)
+          if(!ignore) setData(res.data)
         }
         catch(error){
           if(!ignore) {
@@ -41,7 +41,7 @@ const useFetchData = () => {
         return () => { ignore = true; };
     },[])
 
-  return [products, loading, error] //an object is returned
+  return [data, loading, error] //an object is returned
 }
 
 export default useFetchData;
