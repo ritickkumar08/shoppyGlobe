@@ -68,7 +68,7 @@ function HomeComponents() {
   //   }
   // ];
     return (
-        <div className='border bg-gradient-to-r min-h-screen from-rose-200 to-rose-400 dark:bg-dark-bg transition-colors duration-300'>
+        <div className='border bg-gradient-to-r min-h-screen from-rose-200 to-rose-300 dark:bg-dark-bg transition-colors duration-300'>
 
             <style>@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');</style>
 
@@ -84,7 +84,7 @@ function HomeComponents() {
                   <p className='font-bold text-gray-600 text-2xl mb-10'>Shop the Best Deals For You</p>
                   <div className='flex gap-4'>
                       <NavLink to='/Products' className='flex items-center justify-center gap-2 ml-7 px-8 border py-4 rounded-lg font-bold bg-orange-400 text-white hover:bg-orange-300 shadow-sm shadow-black hover:shadow-md transition-all duration-300'>Browse Products <FaArrowRightLong /> </NavLink>
-                      <NavLink to='Cart' className='flex items-center justify-center gap-2 px-8 border py-4 rounded-lg font-bold bg-transparent text-white shadow-sm shadow-black hover:shadow-md transition-all duration-300'><FaShoppingCart/>View Cart</NavLink>
+                      <NavLink to='Cart' className='flex items-center justify-center gap-2 px-8 border py-4 rounded-lg font-bold bg-rose-400 text-white shadow-sm shadow-black hover:shadow-md transition-all duration-300'><FaShoppingCart/>View Cart</NavLink>
                   </div>
 
                   <div className="mt-12 flex gap-8 items-center border-t border-white dark:border-dark-border pt-4 w-xl">

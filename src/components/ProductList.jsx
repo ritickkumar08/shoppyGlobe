@@ -20,13 +20,13 @@ function ProductList() {
 
     //fetchong the data from the custom hook
     const [data, loading, error]  = useFetchData()
-    console.log(data);
+    // console.log(data);
     // console.log(loading);
     // console.log(error);
     
      // Search query from Redux store subscribing to the redux store components
     const input = useSelector((state) => state.search.input)
-    console.log(input);
+    // console.log(input);
     
 
     //products stored after filtering and only storing the needed products after being searched
@@ -56,7 +56,7 @@ function ProductList() {
 
     
     return (
-        <div className='border w-full flex flex-col min-h-screen bg-gradient-to-r items-center from-rose-200 to-rose-400 dark:bg-dark-bg transition-colors duration-300'>
+        <div className='border w-full flex flex-col min-h-screen bg-gradient-to-r items-center from-rose-50 to-rose-100 dark:bg-dark-bg transition-colors duration-300'>
             
             <section className='mt-24'>
                 {/* search Bar */}
@@ -67,21 +67,21 @@ function ProductList() {
                             <FaSearch size={34} />
                         </span>
         
-                        <input type="text" value={input} onChange={(e)=>dispatch(setSearchInput(e.target.value))} placeholder='search for products in your mind...'
+                        <input type="text" value={input} onChange={(e)=>dispatch(setSearchInput(e.target.value))} placeholder='Search for products in your mind...'
                         className='w-full h-16 md:h-20 pl-20 rounded-lg 
                             bg-gradient-to-r from-white via-transparent to-transparent
                             dark:bg-dark-surface
                             border-2 border-white dark:border-dark-border
-                            text-xl md:text-2xl font-black
-                            text-light-text dark:text-dark-text
-                            placeholder:text-light-muted/50 placeholder:font-bold
+                            text-xl md:text-2xl font-semibold
+                            park:text-dark-text
+                            placeholder:text-grey-400 placeholder:font-extralight
                             outline-none shadow-sm transition-all
                             focus:border-light-primary focus:shadow-2xl focus:shadow-light-primary/10'
                         />
                         {input && (
                             <button onClick={() => dispatch(setSearchInput(""))}
-                            className="absolute right-6 top-1/2 -translate-y-1/2 text-light-muted hover:text-rose-500 transition-colors">
-                            <LuSearchX size={34} color='white'/>
+                            className="absolute right-6 top-1/2 -translate-y-1/2 text-light-muted hover:text-rose-500 transition-colors text-rose-400">
+                            <LuSearchX size={34} />
                             </button>
                         )}
                     </div>
@@ -108,7 +108,7 @@ function ProductList() {
                     </div>
 
                     {/* ✅ Filtered count */}
-                    <span className="text-sm font-semibold px-4 py-1 rounded-full text-nowrap border-2 border-white bg-gradient-to-r from-white to-transparent">
+                    <span className="text-sm font-semibold px-4 py-1 rounded-full text-nowrap  bg-gradient-to-r from-black via-black to-black text-white">
                     {filteredProducts?.length || 0} Items Found
                     </span>
                 </div>

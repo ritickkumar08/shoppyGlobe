@@ -10,7 +10,7 @@ import {addToCart} from '../redux/slices/cartSlice'
 
 
 /* helper component to render stars and avoid re-creation */
-function RenderStars({ rating }) {
+function Stars({ rating }) {
   const safeRating = Number(rating) || 0;
   const filledStars = Math.floor(safeRating);
 
@@ -73,14 +73,14 @@ function ProductItem({id,
             </div>
 
             {/* Content */}
-            <div className='p-5 flex flex-col flex-grow bg-rose-200'>
+            <div className='p-5 flex flex-col flex-grow bg-rose-100'>
                 <h2 className='font-serif text-light-text dark:text-dark-text text-lg font-bold line-clamp-1 mb-1 group-hover:text-light-primary dark:group-hover:text-dark-primary transition-colors'>
                     {title}
                 </h2>
 
                 {/* callint the helper function to determine the number of filled stara and render them */}
                 <div className='mb-3'>
-                    <RenderStars rating={rating} />
+                    <Stars rating={rating} />
                 </div>
                 
                 {/* description */}

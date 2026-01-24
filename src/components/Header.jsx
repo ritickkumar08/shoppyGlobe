@@ -13,18 +13,18 @@ function Header() {
                 {/* icon or logo */}
                 <NavLink to='/' 
                 className='flex items-center text-6xl p-3 font-semibold'>
-                    <FaShopify className=' text-orange-400'/>Globe
+                    <FaShopify className=' text-rose-400'/>Globe
                 </NavLink>
     {/*className={({isActive}) =>`text-3xlcursor-pointer hover:border-b ${isActive ? "text-amber-400":"text-amber-100"}`} */}
 
                 {/* pages navigation button */}
                 <div className='flex items-center gap-6 text-2xl font-semibold'>
                     {/* home buttton */}
-                    <NavLink to='/' className={({isActive})=> `hover:border-b-2  ${isActive ? "text-orange-400 border-b-2 text-3xl" : ""}`}>Home</NavLink>
+                    <NavLink to='/' className={({isActive})=> `hover:border-b-2  ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""}`}>Home</NavLink>
                     {/* products page link */}
-                    <NavLink to='/Products' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-orange-400 border-b-2 text-3xl" : ""}`}>Products</NavLink>
+                    <NavLink to='/Products' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""}`}>Products</NavLink>
                     {/* checkout page link */}
-                    <NavLink to='/CheckOut' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-orange-400 border-b-2 text-3xl" : ""}`}>Checkout</NavLink>
+                    <NavLink to='/CheckOut' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""}`}>Checkout</NavLink>
                 </div>
 
                 {/* two buttons one for mode and the other is cart */}
