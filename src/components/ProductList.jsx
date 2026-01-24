@@ -81,7 +81,7 @@ function ProductList() {
                         {input && (
                             <button onClick={() => dispatch(setSearchInput(""))}
                             className="absolute right-6 top-1/2 -translate-y-1/2 text-light-muted hover:text-rose-500 transition-colors">
-                            <LuSearchX size={34}/>
+                            <LuSearchX size={34} color='white'/>
                             </button>
                         )}
                     </div>
@@ -101,7 +101,7 @@ function ProductList() {
                 {/* Header */}
                 <div className="w-7xl px-6 pt-10 pb-4 flex items-center justify-between">
                     <div className="flex flex-col gap-1">
-                    <h1 className="text-2xl md:text-3xl font-black flex gap-2">
+                    <h1 className="text-2xl md:text-3xl font-black flex gap-2 font-serif">
                         Currently In <IoStorefront /> <span className="text-rose-400">Items...</span>
                     </h1>
                     <div className="h-1 w-16 bg-rose-400 rounded-full"></div>
@@ -118,7 +118,15 @@ function ProductList() {
                     {filteredProducts?.length > 0 ? (
                         filteredProducts.map((product) =>(
                             <div key={product.id} className="flex-[1_1_280px] max-w-[320px]">
-                                <ProductItem/>
+                                <ProductItem key={product.id}
+                                            id={product.id}
+                                            title={product.title}
+                                            description={product.description}
+                                            price={product.price}
+                                            images={product.images}
+                                            category={product.category}
+                                            rating={product.rating}
+                                            thumbnail={product.thumbnail}/>
                             </div>
                         ))) : (
                         <div className='w-full py-20 text-center'>
