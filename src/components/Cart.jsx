@@ -5,6 +5,8 @@ import {useSelector} from 'react-redux' //<MdOutlineProductionQuantityLimits />
 import { CiShoppingBasket } from "react-icons/ci"; //
 import { FaSadTear } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import CartItem from './CartItem';
+import { FaArrowLeft } from "react-icons/fa";
 
 function Cart() {
 
@@ -33,8 +35,46 @@ function Cart() {
         )
     }
     return (
-        <div>
-            cart
+        <div className='min-h-screen w-full bg-gradient-to-r  from-rose-50 to-rose-100 dark:bg-dark-bg py-12 transition-colors duration-300'>
+            <div className='max-w-6xl mx-auto px-4 flex flex-col items-center gap-8 mt-24'>
+                {/* Header */}
+                <div className='w-full flex items-center justify-between mb-4'>
+                    <h1 className='text-4xl font-medium font-serif dark:text-dark-text tracking-tighter uppercase'>
+                        Your{" "}
+                        <span className='dark:text-dark-primary text-rose-400'>
+                        Basket
+                        </span>
+                    </h1>
+
+                    <span className='text-lg font-medium text-white bg-black dark:bg-dark-surface px-4 py-2 rounded-2xl'>
+                        {cartItems.length} {cartItems.length === 1 ? "Item" : "Items"}
+                    </span>
+                </div>
+
+                {/* cart item mapping */}
+
+                <div className='w-full flex flex-col gap-8 items-center'>
+                    {cartItems.map((item) => (
+                       <CartItem
+                            key={item.id}
+                            item={item}
+                            discountedPrice={(
+                                item.price *
+                                (1 - item.discountPercentage / 100)
+                            ).toFixed(2)}
+                            />
+                        ))}
+
+                        {/* Continue Shopping */}
+                        <Link
+                            to="/products"
+                            className="flex items-center gap-2 border-2 font-black text-rose-400 uppercase tracking-widest mt-4 px-8 py-4 rounded-full border-rose-400 shadow-sm shadow-black hover:shadow-black hover:shadow-md"
+                        >
+                            <FaArrowLeft  size={20} />
+                            Continue Shopping
+                        </Link>
+                </div>
+            </div>
         </div>
     )
 }
