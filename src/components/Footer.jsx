@@ -15,7 +15,7 @@ function Footer() {
                 <h1 className="flex items-center text-2xl sm:text-4xl font-bold p-5 text-amber-50 cursor-pointer"><span><GiBlackBook /></span><span className="">Lib</span>Reads</h1>
 
                 {/* footer text and designer */}
-                <p className='text-white text-sm sm:text-base flex items-center justify-center'>© 2026 Online Library | Built with  <FaHeartbeat className='text-red-800 mx-2'/>  by Ritick Kumar</p>
+                <p className='text-white text-sm sm:text-base flex items-center justify-center'>© 2026 ShoppyGlobe | Built with  <FaHeartbeat className='text-red-800 mx-2'/>  by Ritick Kumar</p>
             </div>
         </footer>
     )

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Cart() {
+function Checkout() {
     return (
         <div>
-            <h1>cart</h1>
+            hello
         </div>
     )
 }
 
-export default Cart
+export default Checkout
