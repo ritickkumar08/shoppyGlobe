@@ -14,7 +14,7 @@ const Products = lazy(() => import('../pages/Products'))
 // import ProductDetailsPage from "../pages/ProductDetailsPage";
 const ProductDetailsPage = lazy(()=> import("../pages/ProductDetailsPage"))
 // import Cart from '../pages/Cart'
-const Cart = lazy(()=>import('../pages/Cart'))
+const CartPage = lazy(()=>import('../pages/CartPage'))
 // import CheckOut from '../pages/CheckOut'
 const CheckOut = lazy(()=> import('../pages/CheckOut'))
 
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'cart',
-                element:withSuspense(Cart),
+                element:withSuspense(CartPage),
             },
             {
                 path: 'checkout',
