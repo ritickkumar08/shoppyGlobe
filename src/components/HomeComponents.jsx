@@ -1,107 +1,55 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
-import {
-  FaShoppingBag,
-  FaMoon,
-  FaDatabase,
-  FaShoppingCart
-} from "react-icons/fa";
+import { FaShoppingCart} from "react-icons/fa";
 // import { FiZap, FiSmartphone } from "react-icons/fi";
 // import { IoShieldCheckmark } from "react-icons/io5";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 import Ecommerce from '../assets/Ecommerce.webp'
 
-// // Component for displaying individual feature cards with animation
-// const FeatureCard = ({ icon: Icon, title, description, delay }) => (
-//   <div 
-//     className={`group p-8 rounded-2xl border border-light-border dark:border-dark-border bg-light-surface dark:bg-dark-surface hover:border-dark-primary/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slide-up`}
-//     style={{ animationDelay: `${delay}ms`, animationFillMode: 'both' }}
-//   >
-//     <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-light-primary/10 dark:bg-dark-primary/10 text-light-primary dark:text-dark-primary mb-6 group-hover:rotate-12 transition-transform duration-300">
-//       <Icon size={28} />
-//     </div>
-//     <h3 className="text-xl font-bold mb-3 text-light-text dark:text-dark-text">
-//       {title}
-//     </h3>
-//     <p className="text-light-muted dark:text-dark-muted leading-relaxed">
-//       {description}
-//     </p>
-//   </div>
-// );
-
+/*
+  Home page hero component.
+  This component is intentionally stateless and presentation-focused.
+*/
 
 function HomeComponents() {
-
-  //   // Array of features to display in the features section
-  // const features = [
-  //   {
-  //     icon: FaShoppingBag  ,
-  //     title: "Product Management",
-  //     description: "Advanced product listing with real-time availability and detailed specifications."
-  //   },
-  //   {
-  //     icon: FiZap  ,
-  //     title: "Fast Performance",
-  //     description: "Built with Vite for near-instant load times and optimized asset delivery."
-  //   },
-  //   {
-  //     icon: IoShieldCheckmark  ,
-  //     title: "Secure Checkout",
-  //     description: "Fully encrypted payment processing powered by modern security protocols."
-  //   },
-  //   {
-  //     icon: FiSmartphone  ,
-  //     title: "Mobile First",
-  //     description: "Designed to look stunning on everything from 300px devices to large desktops."
-  //   },
-  //   {
-  //     icon: FaMoon  ,
-  //     title: "Adaptive Theme",
-  //     description: "Seamless switching between light and dark modes with a single click."
-  //   },
-  //   {
-  //     icon: FaDatabase  ,
-  //     title: "Global State",
-  //     description: "Centralized cart and product data using React Context API for consistency."
-  //   }
-  // ];
     return (
-        <div className='border bg-gradient-to-r min-h-screen from-rose-200 to-rose-300 dark:bg-dark-bg transition-colors duration-300'>
+        <div className='min-h-screen bg-gradient-to-r from-rose-200 to-rose-300 transition-colors duration-300 relative border overflow-hidden'>
 
             <style>@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');</style>
+            
+            {/* Background overlay.Parent is relative to ensure absolute positioning behaves predictably.*/}
+            <div className="absolute hidden md:block inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent pointer-events-none"></div>
 
             {/* hero section */}
-            <section className='flex mt-24 m-2'>
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent"></div>
+            <section className='flex flex-col lg:flex-row mt-24 m-2 gap-10'>
 
-              <section className='relative mt-24 p-5 w-3xl'>
-                  <p className='text-gray-600 text-2xl mb-6'>WELCOME TO OUR SHOPPING</p>
-                  <p className='font-bold text-black text-6xl mb-6 font-serif'>Discover the</p>
-                  <p className='font-extrabold text-orange-400 text-6xl mb-6 font-[Nosifer]'>Latest Trends</p>
-                  <p className='font-bold text-gray-600 text-2xl mb-10'>Shop the Best Deals For You</p>
-                  <div className='flex gap-4'>
-                      <NavLink to='/Products' className='flex items-center justify-center gap-2 ml-7 px-8 border py-4 rounded-lg font-bold bg-orange-400 text-white hover:bg-orange-300 shadow-sm shadow-black hover:shadow-md transition-all duration-300'>Browse Products <FaArrowRightLong /> </NavLink>
-                      <NavLink to='Cart' className='flex items-center justify-center gap-2 px-8 border py-4 rounded-lg font-bold bg-rose-400 text-white shadow-sm shadow-black hover:shadow-md transition-all duration-300'><FaShoppingCart/>View Cart</NavLink>
+              <section className='relative mt-12 lg:mt-24 p-5 w-full lg:max-w-3xl'>
+                  <p className='text-gray-600 text-base sm:text-xl md:text-2xl mb-4 sm:mb-6'>WELCOME TO OUR SHOPPING</p>
+                  <p className='font-bold text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 font-serif'>Discover the</p>
+                  <p className='font-extrabold text-orange-400 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 font-[Nosifer]'>Latest Trends</p>
+                  <p className='font-bold text-gray-600 text-base sm:text-xl md:text-2xl mb-6 sm:mb-10'>Shop the Best Deals For You</p>
+                  <div className='flex flex-col sm:flex-row gap-4'>
+                      <NavLink to='/Products' className='flex items-center justify-center gap-2 sm:ml-7 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold bg-orange-400 text-white hover:bg-orange-300 shadow-sm shadow-black hover:shadow-md transition-all duration-300'>Browse Products <FaArrowRightLong /> </NavLink>
+                      <NavLink to='/Cart' className='flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold bg-rose-400 text-white shadow-sm shadow-black hover:shadow-md transition-all duration-300'><FaShoppingCart/>View Cart</NavLink>
                   </div>
 
-                  <div className="mt-12 flex gap-8 items-center border-t border-white dark:border-dark-border pt-4 w-xl">
-                      <div className='border-r pr-5 border-white'>
-                          <p className="text-2xl font-bold text-light-text dark:text-dark-text">10k+</p>
-                          <p className="text-sm text-light-muted dark:text-dark-muted">Products</p>
+                  <div className='mt-10 sm:mt-12 flex gap-6 sm:gap-8 items-center border-t border-white pt-4 w-full sm:max-w-xl'>
+                      <div className='border-r pr-4 sm:pr-5 border-white'>
+                          <p className='text-xl sm:text-2xl font-bold dark:text-dark-text'>10k+</p>
+                          <p className='text-xs sm:text-sm dark:text-dark-muted'>Products</p>
                       </div>
                       <div>
-                          <p className="text-2xl font-bold text-light-text dark:text-dark-text">24/7</p>
-                          <p className="text-sm text-light-muted dark:text-dark-muted">Support</p>
+                          <p className='text-xl sm:text-2xl font-bold dark:text-dark-text'>24/7</p>
+                          <p className='text-xs sm:text-sm dark:text-dark-muted'>Support</p>
                       </div>
                   </div>
               </section>
 
               {/* hero image */}
-              <section className='border-2 rounded-xl'>
-                <img src={Ecommerce} alt="" className='max-w-2xl my-auto rounded-xl h-full shadow-md shadow-black transform md:rotate-4 hover:rotate-1 transition-transform duration-500'/>
+              <section className='border-2 rounded-xl flex justify-center'>
+                <img src={Ecommerce} alt="" className='w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl rounded-xl shadow-md shadow-black transform md:rotate-4 hover:rotate-1 transition-transform duration-500'/>
               </section>
             </section>
 

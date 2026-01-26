@@ -88,6 +88,8 @@ function ProductDetail() {
     const discountedPrice = (
         price * (1 - discountPercentage / 100)
     ).toFixed(2);
+    console.log(discountedPrice);
+    
 
     const addItemToCart = () => {
         dispatch(
@@ -97,6 +99,8 @@ function ProductDetail() {
             price,
             image: mainImage,
             quantity: 1,
+            discountedPrice,
+            discountPercentage
         })
         );
     };

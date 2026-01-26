@@ -4,32 +4,55 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState:{
         items:[],
-        totalQuantity:0
+        totalQuantity:0  //represents total item count, not distinct products
     },
     reducers:{
         addToCart: (state,action)=>{
-            let someItem = state.items.find((item)=>{item.id === action.payload.id})
+            const product = action.payload;
+            const existing = state.items.find(
+                (item) => item.id === product.id
+            );
 
-            if(someItem){
-                someItem.noOfitems +=1
-            }else{
-                state.items.push({...action.payload, noOfitems: 1})
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                state.items.push({ ...product, quantity: 1 });
             }
-            state.totalQuantity +=1
+
+            state.totalQuantity += 1;
         },
         removeFromCart: (state,action)=>{
-            state.items = state.items.filter((item) => item.id !== action.payload)
+            const id = action.payload;
+            const item = state.items.find((i) => i.id === id);
+
+            if (!item) return;
+
+            state.totalQuantity -= item.quantity;
+            state.items = state.items.filter((i) => i.id !== id);
         },
         increaseQuantity:(state,action)=>{
-            const item = state.items.find((item)=> {item.id === action.payload})
-            if(item) item.quantity++;
+            const item = state.items.find((i) => i.id === action.payload);
+            if (item) {
+                item.quantity += 1;
+                state.totalQuantity += 1;
+            }
         },
         decreaseQuantity:(state,action)=>{
-            const item = state.items.find((item)=>{item.id === action.payload})
-            if(item) item.quantity--;
+           const item = state.items.find((i) => i.id === action.payload);
+            if (!item) return;
+
+            item.quantity -= 1;
+            state.totalQuantity -= 1;
+
+            if (item.quantity === 0) {
+                state.items = state.items.filter(
+                (i) => i.id !== action.payload
+                );
+            }
         },
         clearCart:(state)=>{
             state.items = [];
+            state.totalQuantity = 0;
         }
     }
 })

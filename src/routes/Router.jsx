@@ -19,20 +19,25 @@ const CartPage = lazy(()=>import('../pages/CartPage'))
 const CheckOut = lazy(()=> import('../pages/CheckOut'))
 
 
+// HOC to wrap lazy components with Suspense.
+// This avoids repeating Suspense logic for every route.
 const withSuspense = (Comp) =>(
     <Suspense fallback={<div><Loader/></div>}>
         <Comp/>
     </Suspense>
 )
 
-
+// All child routes render inside App's <Outlet />.
 const router = createBrowserRouter([
     {
         path:'/',
         element: <App/>,
+        // Route-level error boundary.
+        // This catches rendering + loader errors for this subtree.
         errorElement : <NotFound/>,
         children:[
             {
+                // Home page: "/"
                 index:true,
                 element: withSuspense(Home),
             },
@@ -41,20 +46,24 @@ const router = createBrowserRouter([
                 element: <ProductLayout/>,
                 children:[
                     {
+                        // "/products"
                         index: true,
                         element:withSuspense(Products),
                     },
                     {
+                        // "/products/:id"
                         path: ':id',
                         element:withSuspense(ProductDetailsPage),
                     },
                 ]
             },
             {
+                // "/cart"
                 path: 'cart',
                 element:withSuspense(CartPage),
             },
             {
+                // "/checkout"
                 path: 'checkout',
                 element:withSuspense(CheckOut),
             }

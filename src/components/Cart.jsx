@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {useSelector} from 'react-redux' //<MdOutlineProductionQuantityLimits />
 
 //icons import
@@ -12,7 +12,16 @@ function Cart() {
 
     // Single source of truth: Redux
     const cartItems = useSelector((state) => state.cart.items);
-    // console.log(cartItems);
+    console.log(cartItems);
+
+    // const [cartItems, setCartItems] = useState([]);
+    //     const selector = useSelector((state) => state.cart.tems);
+
+    //     // Sync local state with Redux store
+    //     useEffect(() => {
+    //         setCartItems(selector);
+    //     }, [selector]);
+    //     console.log(cartItems);
 
     // Empty cart state (early return)
     if(!cartItems.length){

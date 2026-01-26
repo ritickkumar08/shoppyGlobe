@@ -5,14 +5,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const searchSlice = createSlice({
     name :'search', //name with which it will be known
     initialState:{
-        input:"" //At the start, the search box is empty.
+        query:"" //At the start, the search box is empty.
     },
     reducers:{
         setSearchInput:(state, action)=>{
-            state.input = action.payload
+            state.query = action.payload
         },
         clearSearch:(state) =>{
-            state.input = ""
+            state.query = ""
         }
     }
 })

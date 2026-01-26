@@ -7,6 +7,9 @@ function App() {
   return (
     <div>
       <Header/>
+       {/* 
+        Outlet renders the matched child route.All pages must assume they live inside this layout.
+      */}
       <Outlet/>
       <Footer/>
     </div>
