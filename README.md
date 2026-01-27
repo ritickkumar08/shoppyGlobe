@@ -51,5 +51,80 @@ Project Purpose
     ->Practice real-world cart logic
     ->Serve as a portfolio-ready frontend project
 
+normal navigation flow (e-commerce brain)
+    1. Entry point
+        ->User lands on your site via:
+        ->home page
+        ->shared product link
+        ->User intent at this moment is vague: “let me see what this site is.”
+        ->They scan:
+        ->header / navbar
+        ->hero section
+        ->category hints
+       
+    2. Browsing products
+
+        ->User navigates to:
+        ->Products page
+        ->or clicks a category
+        ->Typical behavior:
+        ->scroll
+        ->skim images
+        ->ignore descriptions
+       
+    3. Product inspection
+
+        ->User clicks a product card.
+        ->On the product page, they check in this order:
+        ->image (first)
+        ->price (immediately)
+        ->discount (if any)
+        ->title
+        ->availability
+        ->only then description
+        ->If something feels off (price jump, unclear stock), they leave.
+   
+   4. Add to cart (first commitment)
+        ->User clicks Add to Cart.
+        ->Two possibilities:
+        ->stays on page and keeps browsing
+        ->navigates to cart out of curiosity
+        ->Important:
+        -Adding to cart ≠ intent to buy
+        ->It’s a bookmark with benefits.
+
+    5. Cart review (sanity check)
+
+        ->User goes to Cart.
+        ->They do four things instinctively:
+        ->confirm items are correct
+        ->adjust quantities
+        ->remove mistakes
+        ->re-evaluate total cost
+        ->This is where:
+        ->quantity controls
+        ->warnings
+        ->clear pricing
+        ->…actually matter.
+        If cart feels confusing → abandonment spike.
+
+    7. Checkout flow
+
+        ->User expects:
+        ->minimal steps
+        ->no forced account creation
+        ->clear progress (step 1, step 2, step 3)
+        ->They tolerate:
+        ->address input
+        ->payment input
+       
+    8. Confirmation
+        ->User sees:
+        ->order summary
+        ->success message
+        ->reassurance
+
+
+
 Author
     -Ritick Kumar
