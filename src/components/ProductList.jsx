@@ -120,15 +120,7 @@ function ProductList() {
                     {filteredProducts?.length > 0 ? (
                         filteredProducts.map((product) =>(
                             <div key={product.id} className='flex-[1_1_240px] sm:flex-[1_1_260px] lg:flex-[1_1_280px] max-w-[320px]'>
-                                <ProductItem key={product.id}
-                                            id={product.id}
-                                            title={product.title}
-                                            description={product.description}
-                                            price={product.price}
-                                            images={product.images}
-                                            category={product.category}
-                                            rating={product.rating}
-                                            thumbnail={product.thumbnail}/>
+                                <ProductItem product={product}/>
                             </div>
                         ))) : (
                         <div className='w-full py-16 sm:py-20 text-center'>

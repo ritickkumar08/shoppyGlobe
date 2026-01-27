@@ -31,29 +31,27 @@ function Stars({ rating }) {
   );
 }
 
-function ProductItem({id,
-  title,
-  description,
-  price,
-  images = [],
-  category,
-  rating = 0,
-  thumbnail
-}) {
+function ProductItem({product}) {
+
+    //destructuring the product.
+    const {
+            id,
+            title,
+            description,
+            price,
+            rating,
+            thumbnail,
+            discountPercentage,
+            category,
+            images = []
+        } = product;
+
 
     const dispatch = useDispatch();
-
-    const image = images[0] || "/placeholder.png";
     
     const addItemToCart = () => {
         dispatch(
-        addToCart({
-            id,
-            title,
-            price,
-            image,
-            quantity: 1,
-        })
+        addToCart(product)
         );
     };
 

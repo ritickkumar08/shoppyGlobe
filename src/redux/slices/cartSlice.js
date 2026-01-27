@@ -9,6 +9,7 @@ export const cartSlice = createSlice({
     reducers:{
         addToCart: (state,action)=>{
             const product = action.payload;
+            
             const existing = state.items.find(
                 (item) => item.id === product.id
             );

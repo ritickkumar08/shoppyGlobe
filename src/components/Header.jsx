@@ -58,7 +58,6 @@ function Header() {
                 className='flex items-center text-2xl sm:text-6xl p-3 font-semibold dark:text-dark-primary'>
                     <FaShopify className=' text-rose-400 mr-1'/>Globe
                 </NavLink>
-    {/*className={({isActive}) =>`text-3xlcursor-pointer hover:border-b ${isActive ? "text-amber-400":"text-amber-100"}`} */}
 
                 {/* pages navigation button */}
                 <div className='hidden md:flex items-center gap-6 text-2xl font-semibold'>

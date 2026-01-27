@@ -46,7 +46,7 @@ function ProductDetail() {
     const dispatch = useDispatch()
 
     const [data, loading, error] = useFetchData(id)
-    console.log(data);
+    // console.log(data);
     
     const product = data?.products?.find(p => p.id === Number(id));
     // console.log(product);
@@ -88,19 +88,20 @@ function ProductDetail() {
     const discountedPrice = (
         price * (1 - discountPercentage / 100)
     ).toFixed(2);
-    console.log(discountedPrice);
+    // console.log(discountedPrice);
     
 
     const addItemToCart = () => {
         dispatch(
         addToCart({
-            id: data.id,
-            title,
-            price,
-            image: mainImage,
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            discountPercentage: product.discountPercentage,
+            thumbnail: product.thumbnail,
+            image: product.mainImage,
             quantity: 1,
             discountedPrice,
-            discountPercentage
         })
         );
     };
