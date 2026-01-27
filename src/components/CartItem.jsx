@@ -133,7 +133,7 @@ function CartItem({item}) {
                     )}</button>
                 </div>
                 {/* delete button */}
-                <div className='border rounded-lg bg-black shadow-sm hover:shadow-md'>
+                 <div className='border rounded-lg bg-black shadow-sm hover:shadow-md'>
                         <button className='p-2' onClick={handleRemove}>
                             <IoTrashBinSharp size={20} className="md:hidden" color='white'/>
                             <IoTrashBinSharp size={35} className="hidden md:block" color='white'/>
@@ -143,7 +143,7 @@ function CartItem({item}) {
                     <div className='flex items-baseline gap-1'>
                         <div className='text-lg md:text-2xl font-bold'>$ {discountedPrice}</div>
                         <div className='line-through text-xs md:text-sm text-gray-600'>{`(${price})`}</div>
-                </div>   
+                </div>     
             </div>
         </div>
     )

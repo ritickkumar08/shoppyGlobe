@@ -26,7 +26,7 @@ function Cart() {
     // Empty cart state (early return)
     if(cartItems.length === 0){
         return(
-            <div className='min-h-screen flex items-center justify-center bg-gradient-to-r from-rose-50 to-rose-100 px-4 sm:px-6'>
+            <div className='min-h-screen flex items-center justify-center bg-gradient-to-r from-rose-50 to-rose-100 px-4 sm:px-6 '>
                 <div className='max-w-xl w-full text-center space-y-6 sm:space-y-8 p-6 sm:p-10 rounded-3xl shadow-black shadow-lg'>
                     {/* icon of a cart */}
                     <div className='w-fit mx-auto'>

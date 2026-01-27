@@ -51,22 +51,21 @@ function Header() {
 
 
     return (
-        <nav className="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-md dark:bg-dark-surface transition-colors">
+        <nav className="fixed inset-x-0 top-0 z-50 backdrop-blur-sm shadow-md transition-colors">
             <div className='flex justify-between items-center max-w-7xl mx-auto px-4'>
                 {/* icon or logo */}
                 <NavLink to='/' 
                 className='flex items-center text-2xl sm:text-6xl p-3 font-semibold dark:text-dark-primary'>
                     <FaShopify className=' text-rose-400 mr-1'/>Globe
                 </NavLink>
-
                 {/* pages navigation button */}
                 <div className='hidden md:flex items-center gap-6 text-2xl font-semibold'>
                     {/* home buttton */}
-                    <NavLink to='/' className={({isActive})=> `hover:border-b-2  ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""} dark:text-dark-text hover:text-light-primary dark:hover:text-dark-primary`}>Home</NavLink>
+                    <NavLink to='/' className={({isActive})=> `hover:border-b-2  ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""}  hover:text-light-primary `}>Home</NavLink>
                     {/* products page link */}
-                    <NavLink to='/Products' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""} dark:text-dark-text hover:text-light-primary dark:hover:text-dark-primary`}>Products</NavLink>
+                    <NavLink to='/Products' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""} hover:text-light-primary `}>Products</NavLink>
                     {/* checkout page link */}
-                    <NavLink to='/CheckOut' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""} dark:text-dark-text hover:text-light-primary dark:hover:text-dark-primary`}>Checkout</NavLink>
+                    <NavLink to='/CheckOut' className={({isActive})=> `hover:border-b-2 ${isActive ? "text-rose-400 border-b-2 text-3xl" : ""} hover:text-light-primary `}>Checkout</NavLink>
                 </div>
 
                 {/* two buttons one for mode and the other is cart */}
@@ -74,7 +73,7 @@ function Header() {
                     {/* button to switch between light and dark mode */}
                     <button
                         onClick={() => setDark((prev) => !prev)}
-                        className="p-2 rounded-lg dark:hover:bg-dark-border"
+                        className="p-2 rounded-lg"
                         aria-label="Toggle theme"
                     >
                     {dark ? (
@@ -85,7 +84,7 @@ function Header() {
                     </button>
                     {/* the button to navigate to the cart */}
                     <NavLink to='/cart'
-                    className={({isActive})=> `relative hover:border-b-2 ${isActive ? "text-3xl text-rose-400" : ""} dark:hover:bg-dark-border`}>
+                    className={({isActive})=> `relative hover:border-b-2 ${isActive ? "text-3xl text-rose-400" : ""} `}>
                         <FaShoppingCart/>
                         {cartQuantity > 0 && (
                             <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-rose-500 text-xs flex items-center justify-center text-white">
@@ -97,9 +96,9 @@ function Header() {
                     {/* MOBILE MENU BUTTON */}
                     <button
                     onClick={() => setOpen(true)}
-                    className="md:hidden p-2 rounded-lg dark:hover:bg-dark-border"
+                    className="md:hidden p-2 rounded-lg"
                     aria-label="Open menu">
-                        <FiMenu className="text-xl dark:text-dark-text" />
+                        <FiMenu className="text-xl" />
                     </button>
                 </div>
             </div>
